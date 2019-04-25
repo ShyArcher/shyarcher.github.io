@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="ShyArcher Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://shyarcher.github.io//img/myheader_image_01.png">
+    <meta property="twitter:image" content="https://shyarcher.github.io//img/myheader_image_01.png" />
+    
+
+    
+    <meta name="title" content="Blog Configuration Notes" />
+    <meta property="og:title" content="Blog Configuration Notes" />
+    <meta property="twitter:title" content="Blog Configuration Notes" />
+    
+
+    
+    <meta name="description" content="ShyArcher,Java后端,全栈工程师">
+    <meta property="og:description" content="ShyArcher,Java后端,全栈工程师" />
+    <meta property="twitter:description" content="ShyArcher,Java后端,全栈工程师" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="java,Java后端">
+    <link rel="shortcut icon" href="/img/myheader_image.jpg">
+
+    <title>Blog Configuration Notes-ShyArcher&#39;s blog | ShyArcher Blog</title>
+
+    <link rel="canonical" href="/posts/blog-configuration-notes/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+	
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">stay hungry, stay foolish</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/categories/tech">tech</a>
+                    </li>
+                    
+                    
+		    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/myheader_image_01.png')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        <a class="tag" href="/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                    </div>
+                    <h1>Blog Configuration Notes</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+			Posted by 
+			
+			         &#34;ShyArcher&#34;
+			 
+			on 
+			Monday, April 22, 2019
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#hugo搭建个人博客步骤及几点注意事项">hugo搭建个人博客步骤及几点注意事项</a>
+<ul>
+<li><a href="#1-下载并安装hugo">1.下载并安装hugo</a></li>
+<li><a href="#2-下载配置hugo主题">2.下载配置hugo主题</a></li>
+<li><a href="#3-本地调试博客">3.本地调试博客</a></li>
+<li><a href="#4-将本地仓库推送到github">4.将本地仓库推送到github</a></li>
+<li><a href="#5-注意事项">5.注意事项</a></li>
+</ul></li>
+</ul>
+</nav>
+                
+                
+
+<h1 id="hugo搭建个人博客步骤及几点注意事项">hugo搭建个人博客步骤及几点注意事项</h1>
+
+<p>搭建个人博客需要事先做的准备: 安装 <a href="https://git-scm.com/downloads">git</a>, 注册 <a href="https://github.com/">github</a> 账号, 安装 <a href="https://gohugo.io/">hugo</a></p>
+
+<h2 id="1-下载并安装hugo">1.下载并安装hugo</h2>
+
+<p>​       在官网下载并安装hugo,可以参考官方的<a href="https://gohugo.io/getting-started/installing/">安装教程</a>, 安装完成后还需要进行环境变量的配置, 将Hugo/bin添加到用户变量下的path变量中</p>
+
+<h2 id="2-下载配置hugo主题">2.下载配置hugo主题</h2>
+
+<p>​       (1) win+r+cmd进入控制台程序, 然后进入自己的工作区输入<code>hugo new site Blog</code>, 就会生成这几个文件</p>
+
+<p><img src="https://od.lk/s/NDBfMTAwOTY4MjFf/1.png" alt="1" /></p>
+
+<p>​   (2) 输入<code>cd Blog</code>进入博客根目录</p>
+
+<p>​   (3)输入下面命令下载主题, 这里以下载cleanwhite主题为例 ,</p>
+
+<pre><code>git init
+git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
+</code></pre>
+
+<p>其他主题也可以修改<code>zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite</code>,当然 , 参考主题发布者的说明更重要 ,</p>
+
+<p>或者进入themes子目录进行下载</p>
+
+<pre><code>cd themes
+git clone https://github.com/zhaohuabing/hugo-theme-cleanwhite.git
+</code></pre>
+
+<p>也可以在<a href="https://themes.gohugo.io/">hugo主题商店</a>下载.zip文件,并且解压到Blog/themes文件夹下</p>
+
+<p>​   (4)打开Blog/config.toml文件,并参考hugo-theme-cleanwhite/exampleSite/config.toml文件进行配置,archetypes文件夹下的模版文件也可以参考hugo-theme-cleanwhite/archetypes下的post.md文件来配置, 另外, 将Blog/archetypes中的default.md文件中的<code>draft</code>项的<code>true</code>改为<code>false</code>,<code>draft</code>为false时才可以发布博文</p>
+
+<p>​</p>
+
+<h2 id="3-本地调试博客">3.本地调试博客</h2>
+
+<p>上面的配置都完成了之后可以进行博客的本地调试</p>
+
+<p>​       (1)进入根目录, 也就是Blog文件夹下, 执行<code>hugo new posts/test.md</code>命令 , 会在content/posts目录下生成 . md文件 , 如果没有posts文件夹则会在content目录下生成 , 建议手动创建一个posts文件夹用来保存以后博文 , 发布博文也是通过这条命令</p>
+
+<p>​       (2)输入<code>hugo server</code>进行本地调试 , 完成后在浏览器输入<code>http://localhost:1313/</code>即可以看到博客的雏形</p>
+
+<h2 id="4-将本地仓库推送到github">4.将本地仓库推送到github</h2>
+
+<p>1)新建一个空的仓库 , 命名为<code>用户名.github.io</code> , 注意新建的时候不要生成README文件,否则推送到远端仓库的时候会报错</p>
+
+<p>​       (2)在Blog目录下执行</p>
+
+<pre><code>hugo
+</code></pre>
+
+<p>命令 , 会生成一个 public 文件夹 , 包括如下内容</p>
+
+<p><img src="https://od.lk/s/NDBfMTAwOTY4MjJf/11.png" alt="11" /></p>
+
+<p>需要推送到 github 上的就是这个目录中的内容 ,  加载主题时 , themes目录下的 static 和 layouts 这两个文件夹中的内容也会更新到 public 目录下</p>
+
+<p>​       (3)执行<code>cd public</code>命令进入public文件,然后输入如下命令推送到git仓库</p>
+
+<pre><code>git init //第一次执行,生成.git文件
+git add . 
+git commit -m&quot;Initial commit&quot; 
+git remote add origin  https://github.com/ShyArcher/shyarcher.github.io.git
+git push -u origin master 
+</code></pre>
+
+<p>然后就可以通过<code>https://你的仓库名</code>访问自己的博客主页了 , 例如我的博客链接就是<code>https://shyarcher.github.io</code></p>
+
+<p>tips:</p>
+
+<p>​   a .<code>-m</code>引号中的内容可以自己指定,最好标注每次的改动内容</p>
+
+<p>​   b.下次推送时只需要执行<code>git push</code>指令即可</p>
+
+<h2 id="5-注意事项">5.注意事项</h2>
+
+<p>​   (1)配置<code>config.toml</code>文件时,需要注意文件的编码格式必须是<code>utf-8</code>,否则博客主页就有可能出现中文乱码的问题 , 写博文时的 . md文件也是同理 . 如果使用记事本编辑<code>config.toml</code>文件 , 只要保存时点<code>文件/另存为</code> , 再把编码格式改为<code>utf-8</code>即可 . 其他的编辑器也是同理</p>
+
+<p>​   (2)若下载的一些主题没能正常配置 , 可以参考发布者的github说明 , 一般都能找到解决方案</p>
+
+<p>​   (3)如果想要更方便地管理博客 , 可以将整个Blog文件都上传到git作为备份 , 再新建一个git仓库 , 将目前的仓库作为该仓库的子模块 , 在Blog文件夹下操作 , 具体命令如下</p>
+
+<pre><code>git init //如果该目录下已经有了.git文件,也可以不需要这一步
+git submodule add https://github.com/github用户名/shyarcher.github.io.git public
+git add .
+git commit -m&quot;Initial commit&quot;
+git remote add origin https://github.com/github用户名/myBlog-hugo.git
+git push -u origin master//同理第一次执行时的代码
+</code></pre>
+
+<p>​   (4)最后一点 , 如果在<code>config</code>文件中找不到需要修改的地方 , 可以去其他<code>.html</code>文件中找就行</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/posts/test/" data-toggle="tooltip" data-placement="top" title="Test">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/posts/%E7%BB%99git%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/" data-toggle="tooltip" data-placement="top" title="给 git 设置代理">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>友情链接</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://kuloha.vip">Kuloha 的博客</a></li>
+                        
+                        <li><a target="_blank" href="https://noahapps.github.io/">Noah 的博客</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href="" rel="alternate" type="application/rss+xml" title="ShyArcher Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:ranshy@foxmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    <li>
+                        <a target="_blank" href="/img/mywechat.png">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/ShyArcher">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; ShyArcher Blog 2019
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

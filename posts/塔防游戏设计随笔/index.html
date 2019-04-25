@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="ShyArcher Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://shyarcher.github.io//img/myheader_image_01.png">
+    <meta property="twitter:image" content="https://shyarcher.github.io//img/myheader_image_01.png" />
+    
+
+    
+    <meta name="title" content="塔防游戏设计随笔" />
+    <meta property="og:title" content="塔防游戏设计随笔" />
+    <meta property="twitter:title" content="塔防游戏设计随笔" />
+    
+
+    
+    <meta name="description" content="ShyArcher,Java后端,全栈工程师">
+    <meta property="og:description" content="ShyArcher,Java后端,全栈工程师" />
+    <meta property="twitter:description" content="ShyArcher,Java后端,全栈工程师" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="java,Java后端">
+    <link rel="shortcut icon" href="/img/myheader_image.jpg">
+
+    <title>塔防游戏设计随笔-ShyArcher&#39;s blog | ShyArcher Blog</title>
+
+    <link rel="canonical" href="/posts/%E5%A1%94%E9%98%B2%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+	
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">stay hungry, stay foolish</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/categories/tech">tech</a>
+                    </li>
+                    
+                    
+		    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/myheader_image_01.png')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        <a class="tag" href="/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                    </div>
+                    <h1>塔防游戏设计随笔</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+			Posted by 
+			
+			         &#34;ShyArcher&#34;
+			 
+			on 
+			Wednesday, April 24, 2019
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#设计思路">设计思路</a></li>
+<li><a href="#进度">进度</a></li>
+<li><a href="#解决方案">解决方案:</a>
+<ul>
+<li><a href="#问题1">问题1:</a></li>
+<li><a href="#问题2">问题2:</a></li>
+<li><a href="#问题3">问题3:</a></li>
+</ul></li>
+<li><a href="#为窗体添加图片-创建防御塔类和敌人类">为窗体添加图片,创建防御塔类和敌人类</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                
+                
+
+<h4 id="设计思路">设计思路</h4>
+
+<p>总体的设计思路是将整个游戏分成三部分完成: <strong>UI部分, 角色属性及功能部分(内部逻辑), 地图部分</strong>.</p>
+
+<h4 id="进度">进度</h4>
+
+<p>目前正在进行开始界面UI部分的设计, 思路是这样的, 整个游戏共分为四个窗体: <strong>菜单窗体, 帮助信息窗体(显示游戏玩法), 游戏窗体, 游戏结束窗体.</strong> 通过为不同窗体容器中的组件添加监听事件来实现窗体间的切换. 比如, 菜单窗体的游戏帮助按钮可以切换到帮助信息窗体, 后者的返回按钮又能再切换回去, 这是目前的效果图:</p>
+
+<p><img src="https://od.lk/s/NDBfMTAxMDI1Nzlf/1.png" alt="" /></p>
+
+<p><img src="https://od.lk/s/NDBfMTAxMDI1ODBf/2.png" alt="" /></p>
+
+<p>目前共遇到三个问题</p>
+
+<ol>
+<li><p><strong>第二个窗体类没有main方法, 所有的初始化工作都是通过外界新建对象时调用构造函数来实现的, 这样存在一个问题, 为返回按钮添加监听事件时, this关键字调用的是ActionListener类, 从而没法实现关闭效果</strong></p></li>
+
+<li><p><strong>第一个问题是, 返回按钮监听事件中拉起第一个窗口时, 窗口是空窗口, 不带任何组件, 因为第一个窗体有main方法, 而所有的配置工作都是通过main方法调用的, 这样只是添加</strong></p></li>
+</ol>
+
+<pre><code class="language-java">JFrame jf = new JFrame();
+
+jf.setVisible(true);
+</code></pre>
+
+<p><strong>是没法显示全部组件的, 因为main方法一直没调用</strong></p>
+
+<p><strong>3.第三个问题是JPanel面板的布局问题, 默认布局是流式布局, 也就是说, 所有的组件都是按顺序添加的, 这样组件的位置就会相当难设置, 每当窗口尺寸一变化组件的位置就会变化. 目前只能先禁用窗口最大化功能来固定组件的位置, 后续再进行调试</strong></p>
+
+<h4 id="解决方案">解决方案:</h4>
+
+<h5 id="问题1">问题1:</h5>
+
+<p>使窗体类实现<code>ActionListener</code>接口, 再在本类中重写<code>actionPerform</code>方法, 就可以在构造方法中或者其他成员方法中使用 <code>组件.addActionListener(this)</code>来实现组件监听事件的处理, 就不用通过传递对象来添加了</p>
+
+<h5 id="问题2">问题2:</h5>
+
+<p>将本窗体类中的所有组件先在<code>成员变量</code>区声明, 这样在本类的所有地方都能够调用了, 然后将所有的初始化及组件添加操作都放在构造函数中进行, 这样外界只要创建本类对象, 同时就能完成所有初始化操作. 当然也能在本类中新建初始化方法, 然后在构造方法中调用即可. 同样, 菜单窗体类也需要实现<code>ActionListener</code>接口.</p>
+
+<h5 id="问题3">问题3:</h5>
+
+<p>我发现目前暂时只需要一个容器, 所以就不添加<code>JPanel</code>组件了, 使用<code>Container container = jframe.getContentPane()</code>来进行组件的添加. 同时使用<code>setResizable()</code>方法来固定窗体</p>
+
+<p>更新于2019-4-24</p>
+
+<h4 id="为窗体添加图片-创建防御塔类和敌人类">为窗体添加图片,创建防御塔类和敌人类</h4>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/posts/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/" data-toggle="tooltip" data-placement="top" title="日常随笔">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>友情链接</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://kuloha.vip">Kuloha 的博客</a></li>
+                        
+                        <li><a target="_blank" href="https://noahapps.github.io/">Noah 的博客</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href="" rel="alternate" type="application/rss+xml" title="ShyArcher Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:ranshy@foxmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    <li>
+                        <a target="_blank" href="/img/mywechat.png">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/ShyArcher">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; ShyArcher Blog 2019
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

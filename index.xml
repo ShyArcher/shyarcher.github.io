@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ShyArcher Blog</title>
+    <link>https://shyarcher.github.io/</link>
+    <description>Recent content on ShyArcher Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://shyarcher.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>塔防游戏设计随笔</title>
+      <link>https://shyarcher.github.io/posts/%E5%A1%94%E9%98%B2%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://shyarcher.github.io/posts/%E5%A1%94%E9%98%B2%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/</guid>
+      <description>设计思路 总体的设计思路是将整个游戏分成三部分完成: UI部分, 角色属性及功能部分(内部逻辑), 地图部分. 进度 目前正在进行开始界面UI部分的设计</description>
+    </item>
+    
+    <item>
+      <title>日常随笔</title>
+      <link>https://shyarcher.github.io/posts/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://shyarcher.github.io/posts/%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94/</guid>
+      <description>这是日常个人随笔, 以后的每次更新都会在这篇文章里, 内容为一些个人想法, 每次字数不限, 争取每天更新, 更新后附上日期, 另外每次标题日期也会更新 &amp;</description>
+    </item>
+    
+    <item>
+      <title>给 git 设置代理</title>
+      <link>https://shyarcher.github.io/posts/%E7%BB%99git%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://shyarcher.github.io/posts/%E7%BB%99git%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</guid>
+      <description>第一次安装git后，如果不设置代理，执行git push指令是上传速度会很慢，设置代理后上传速度会恢复正常 设置代理 打开控制台程序，输入如下指令</description>
+    </item>
+    
+    <item>
+      <title>Blog Configuration Notes</title>
+      <link>https://shyarcher.github.io/posts/blog-configuration-notes/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://shyarcher.github.io/posts/blog-configuration-notes/</guid>
+      <description>hugo搭建个人博客步骤及几点注意事项 搭建个人博客需要事先做的准备: 安装 git, 注册 github 账号, 安装 hugo 1.下载并安装hugo ​ 在官网下载并安装hugo</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>https://shyarcher.github.io/posts/test/</link>
+      <pubDate>Sun, 21 Apr 2019 22:18:20 +0800</pubDate>
+      
+      <guid>https://shyarcher.github.io/posts/test/</guid>
+      <description>test 这是测试的第一个表格： multiply 1 2 3 1 1 2 3 2 2 4 6 3 3 6 9 这是测试的第一个代码块: class Test{ public static void main(String[] args){ System.out.println(&amp;quot;HelloWorld&amp;quot;); //在控制台输出HelloWorld } } 这是</description>
+    </item>
+    
+  </channel>
+</rss>
