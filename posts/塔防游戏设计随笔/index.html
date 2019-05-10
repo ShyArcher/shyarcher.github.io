@@ -267,6 +267,28 @@ jf.setVisible(true);
 
 <h4 id="为窗体添加图片-创建防御塔类和敌人类">为窗体添加图片,创建防御塔类和敌人类</h4>
 
+<p>我最开始的思路是使用<code>JPanel</code>的子类重写<code>paint</code>方法来绘制图像, 但是后来发现, 绘制图片后, 面板中的组件就会被覆盖掉, 窗体中只显示图片.</p>
+
+<p>此时我的解决方案是在一个窗体下添加两个面板, 分成上下两个部分, 上方用来显示图片, 下方用来展示功能按键. 经过反复调试后, 预期的功能是实现了, 但是达不到我想要的效果. 特别是窗体全屏后,组件还是原来的大小.</p>
+
+<p>后来的解决方法是不用<code>paint</code>方法来绘图, 只要重写<code>paintcomponent</code>方法即可,绘图代码为:</p>
+
+<pre><code class="language-java">class MenuPanel extends JPanel {
+        //覆盖JPanel的paint方法
+        //Graphics是绘图的重要类, 可以将其理解成一只画笔
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Image im = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource(&quot;/menu.png&quot;));
+        g.drawImage(im, 0, 0, this.getWidth(), this.getHeight(), this);
+    }
+}
+</code></pre>
+
+<p><code>paintComponent</code>在底层绘制的，不会意外擦除在绘制过程中渲染的任何组件, 绘制的图片会随着窗体的变化而变化. 这是改进的效果图:</p>
+
+<p><img src="https://od.lk/s/NDBfMTAxMjczOTNf/menu_complete.png" alt="" /></p>
+
 
                 
 
