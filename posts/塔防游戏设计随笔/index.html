@@ -213,6 +213,7 @@
 </ul></li>
 <li><a href="#为窗体添加图片-创建防御塔类和敌人类">为窗体添加图片,创建防御塔类和敌人类</a></li>
 <li><a href="#地图绘制">地图绘制</a></li>
+<li><a href="#对map-enemy等功能进行封装">对map、enemy等功能进行封装</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -366,6 +367,18 @@ private void drawMap(Graphics g) {
 </code></pre>
 
 <p>2019-05-17</p>
+
+<h4 id="对map-enemy等功能进行封装">对map、enemy等功能进行封装</h4>
+
+<p>之前在<code>GamePanel</code>类中实现地图绘制功能后，会使整个代码看起来比较繁杂，而且后面需要的游戏地图不止一张，所以我将地图功能单独封装成一个<code>GameMap</code>类， 并且提供对应的<code>drawMap()</code>方法。同样的，在实现enemy部分功能后， 我也将其封装起来，并提供相应的<code>drawEnemy（）</code>方法，这样的好处是更加体现面向对象的思想，整个代码也更加易于阅读，这是目前实现的效果：</p>
+
+<p><img src="https://od.lk/s/NDBfMTAxNDI0MDhf/setEnemy.png" alt="" /></p>
+
+<p>这是目前的类图列表：</p>
+
+<p><img src="https://od.lk/s/NDBfMTAxNDI0MTFf/ClassImage.png" alt="" /></p>
+
+<p>2019-05-19</p>
 
 
                 
