@@ -214,6 +214,7 @@
 <li><a href="#为窗体添加图片-创建防御塔类和敌人类">为窗体添加图片,创建防御塔类和敌人类</a></li>
 <li><a href="#地图绘制">地图绘制</a></li>
 <li><a href="#对map-enemy等功能进行封装">对map、enemy等功能进行封装</a></li>
+<li><a href="#添加炮塔放置功能">添加炮塔放置功能</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -379,6 +380,14 @@ private void drawMap(Graphics g) {
 <p><img src="https://od.lk/s/NDBfMTAxNDI0MTFf/ClassImage.png" alt="" /></p>
 
 <p>2019-05-19</p>
+
+<hr />
+
+<h4 id="添加炮塔放置功能">添加炮塔放置功能</h4>
+
+<p>由于三个按钮的功能都是一致的：生成<code>Tower</code>对象，而要在屏幕上实现同时监听两个不同位置的鼠标点击事件是非常困难的（即先点击相应的按钮，再点击地图上的位置）。三个按钮唯一不共性的地方是：点击后鼠标的图标会产生相应的变化，所以我就在鼠标监听事件中先进行鼠标图标的判断，相应的图标就在屏幕上绘制相应的对象，这样就达到了目标效果，实现也很简单。这是目前实现的效果：</p>
+
+<p><img src="https://od.lk/s/NDBfMTAxOTA4OTJf/setTowerComplete.png" alt="" /></p>
 
 
                 
