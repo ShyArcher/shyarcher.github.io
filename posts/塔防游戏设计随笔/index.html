@@ -215,6 +215,11 @@
 <li><a href="#地图绘制">地图绘制</a></li>
 <li><a href="#对map-enemy等功能进行封装">对map、enemy等功能进行封装</a></li>
 <li><a href="#添加炮塔放置功能">添加炮塔放置功能</a></li>
+<li><a href="#当敌人进入攻击范围内时炮塔发射子弹">当敌人进入攻击范围内时炮塔发射子弹</a>
+<ul>
+<li><a href="#遇到的问题">遇到的问题</a></li>
+<li><a href="#实现的效果">实现的效果</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -388,6 +393,24 @@ private void drawMap(Graphics g) {
 <p>由于三个按钮的功能都是一致的：生成<code>Tower</code>对象，而要在屏幕上实现同时监听两个不同位置的鼠标点击事件是非常困难的（即先点击相应的按钮，再点击地图上的位置）。三个按钮唯一不共性的地方是：点击后鼠标的图标会产生相应的变化，所以我就在鼠标监听事件中先进行鼠标图标的判断，相应的图标就在屏幕上绘制相应的对象，这样就达到了目标效果，实现也很简单。这是目前实现的效果：</p>
 
 <p><img src="https://od.lk/s/NDBfMTAxOTA4OTJf/setTowerComplete.png" alt="" /></p>
+
+<p>2019-05-21</p>
+
+<hr />
+
+<h4 id="当敌人进入攻击范围内时炮塔发射子弹">当敌人进入攻击范围内时炮塔发射子弹</h4>
+
+<p>​   将<code>Tower</code>类实现<code>Runnable</code>接口，重写<code>run</code>方法实时监测敌人和防御塔的相对位置，当二者相对位置小于128个像素时新建<code>Bullet</code>类，然后在线程内部不停更新<code>Bullet</code>的坐标。</p>
+
+<h5 id="遇到的问题">遇到的问题</h5>
+
+<p>​   最开始的思路是，通过游戏面板主线程监测<code>Tower</code>和<code>Enemy</code>的相对位置，然后在本线程中开启<code>Tower</code>中的线程，再在<code>Tower</code>线程中调用<code>fire</code>方法（新建<code>Bullet</code>类，并开启线程）。这样就造成了3层线程嵌套，不同步时会出现单一线程抢占CPU时间过长的问题，同步后又会出现一个机制问题：同一时间段只能开启一个线程。这样就造成了目标坐标在变化但是屏幕不刷新的问题。解决方案是：将主线程和<code>Tower</code>线程相互独立开，更新子弹坐标不采用线程实现。</p>
+
+<h5 id="实现的效果">实现的效果</h5>
+
+<p><img src="https://od.lk/s/NDBfMTAyMDc3MDRf/Update.png" alt="" /></p>
+
+<p>2019-05-24</p>
 
 
                 
