@@ -220,6 +220,11 @@
 <li><a href="#遇到的问题">遇到的问题</a></li>
 <li><a href="#实现的效果">实现的效果</a></li>
 </ul></li>
+<li><a href="#实现子弹追踪和炮塔转向">实现子弹追踪和炮塔转向</a>
+<ul>
+<li><a href="#子弹追踪">子弹追踪</a></li>
+<li><a href="#炮塔转向">炮塔转向</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -411,6 +416,89 @@ private void drawMap(Graphics g) {
 <p><img src="https://od.lk/s/NDBfMTAyMDc3MDRf/Update.png" alt="" /></p>
 
 <p>2019-05-24</p>
+
+<hr />
+
+<h4 id="实现子弹追踪和炮塔转向">实现子弹追踪和炮塔转向</h4>
+
+<h5 id="子弹追踪">子弹追踪</h5>
+
+<p>​   实时计算敌人和子弹间距离<code>deltax</code>和<code>deltay</code>，再利用<code>Math.atan()</code>方法计算出子弹和敌人间与x轴的夹角，最后再用三角函数计算出更新后的坐标。以下为源码：</p>
+
+<pre><code class="language-java">deltax = (double)landforce.getX() - x;
+deltay = (double)landforce.getY() - y;
+
+/*
+         * 为了防止相除的时候分母为0，在 这里需要对delta做判断
+         */
+if( deltax == 0 )
+{
+    if( (double)landforce.getY() &gt;= y ) // 子弹需要下移
+        deltax = 0.0000001;
+    else                    // 子弹需要上移
+        deltax = -0.0000001;
+}
+if( deltay == 0 )
+{
+    if( (double)landforce.getX() &gt;= x )// 子弹需要右移
+        deltay = 0.0000001;
+    else                     // 子弹需要左移
+        deltay = -0.0000001;
+}
+
+//判断敌人所处象限
+if( deltax&gt;0 &amp;&amp; deltay&gt;0 )
+    angle = Math.atan(Math.abs(deltay/deltax));           // 第一项限
+
+else if( deltax&lt;0 &amp;&amp; deltay&gt;0 )
+    angle = Math.PI - Math.atan(Math.abs(deltay/deltax));       // 第二项限
+
+else if( deltax&lt;0 &amp;&amp; deltay&lt;0 )                     
+    angle = Math.PI + Math.atan(Math.abs(deltay/deltax));         // 第三项限
+
+else 
+    angle = 2*Math.PI - Math.atan(Math.abs(deltay/deltax));         // 第四项限
+
+if(isLive) {//更新子弹坐标
+    x += speed*Math.cos(angle);
+    y += speed*Math.sin(angle);
+}
+</code></pre>
+
+<h5 id="炮塔转向">炮塔转向</h5>
+
+<p>​   利用同样的算法，也可以实现炮塔的转向功能，以下为代码实现：</p>
+
+<pre><code class="language-java">subx = landforce.getX() - this.getX();
+suby = landforce.getY() - this.getY();
+System.out.println(subx+&quot;---&quot;+suby);
+//判断敌人所处象限
+if( subx&gt;0 &amp;&amp; suby&gt;0 &amp;&amp; Math.abs(subx)&lt;Math.abs(suby) )
+    this.setDirect(DOWN);// 第一项限
+else if( subx&gt;0 &amp;&amp; suby&gt;0 &amp;&amp; Math.abs(subx)&gt;Math.abs(suby) )
+    this.setDirect(RIGHT);
+
+else if( subx&lt;0 &amp;&amp; suby&gt;0 &amp;&amp; Math.abs(subx)&lt;Math.abs(suby) )
+    this.setDirect(DOWN);// 第二项限
+else if( subx&lt;0 &amp;&amp; suby&gt;0 &amp;&amp; Math.abs(subx)&gt;Math.abs(suby) )
+    this.setDirect(LEFT);
+
+else if( subx&lt;0 &amp;&amp; suby&lt;0 &amp;&amp; Math.abs(subx)&lt;Math.abs(suby) )                     
+    this.setDirect(UP);  // 第三项限
+else if( subx&lt;0 &amp;&amp; suby&lt;0 &amp;&amp; Math.abs(subx)&gt;Math.abs(suby) )                     
+    this.setDirect(LEFT); 
+
+else if(subx&gt;0 &amp;&amp; suby&lt;0 &amp;&amp; Math.abs(subx)&lt;Math.abs(suby))
+    this.setDirect(UP); 
+else 
+    this.setDirect(RIGHT); // 第四项限
+</code></pre>
+
+<p>实现的效果：</p>
+
+<p><img src="https://od.lk/s/NDBfMTAyMDg5Mzhf/BulletFollow.png" alt="" /></p>
+
+<p>2019-05-26</p>
 
 
                 
