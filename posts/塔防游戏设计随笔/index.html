@@ -225,6 +225,12 @@
 <li><a href="#子弹追踪">子弹追踪</a></li>
 <li><a href="#炮塔转向">炮塔转向</a></li>
 </ul></li>
+<li><a href="#利用集合存储enemy类-绘制血条">利用集合存储Enemy类，绘制血条</a>
+<ul>
+<li><a href="#单一线程原则">单一线程原则</a></li>
+<li><a href="#血条绘制">血条绘制</a></li>
+<li><a href="#实现效果">实现效果</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -499,6 +505,20 @@ else
 <p><img src="https://od.lk/s/NDBfMTAyMDg5Mzhf/BulletFollow.png" alt="" /></p>
 
 <p>2019-05-26</p>
+
+<h4 id="利用集合存储enemy类-绘制血条">利用集合存储Enemy类，绘制血条</h4>
+
+<h5 id="单一线程原则">单一线程原则</h5>
+
+<p>​   每个敌人类都是一个线程，因此想要多个敌人类并发运行，就需要开启多个线程（由于Swing是非线程安全的，因此如果线程与Swing组件有接触的话必须满足单一线程原则，即使用专门的时间派发线程处理Swing组件事件。我在这里虽然没有利用线程对组件进行改动，但是如果利用组件开启一个非常耗时的事件的话，就会产生一些bug，比如导致与线程类相关的重绘方法在线程启动期间不执行），最佳解决方案时单开一个线程类，利用这个线程类来延时开启多个Enemy线程（即在线程中启动其他线程），再利用组件启动这个单独的线程类，就可以完美的达到预期的效果。</p>
+
+<h5 id="血条绘制">血条绘制</h5>
+
+<p>​   利用<code>Graphics</code>类中的<code>drawRect（）</code>、<code>fillRect（）</code>方法即可完成血条的绘制。</p>
+
+<h5 id="实现效果">实现效果</h5>
+
+<p><img src="https://od.lk/s/NDBfMTAyMjExMjRf/drawHp%26collection.png" alt="" /></p>
 
 
                 
