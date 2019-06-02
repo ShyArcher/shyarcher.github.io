@@ -231,6 +231,7 @@
 <li><a href="#血条绘制">血条绘制</a></li>
 <li><a href="#实现效果">实现效果</a></li>
 </ul></li>
+<li><a href="#更改敌人寻路算法-利用集合存储防御塔和子弹类">更改敌人寻路算法，利用集合存储防御塔和子弹类</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -519,6 +520,195 @@ else
 <h5 id="实现效果">实现效果</h5>
 
 <p><img src="https://od.lk/s/NDBfMTAyMjExMjRf/drawHp%26collection.png" alt="" /></p>
+
+<p>2019-05-29</p>
+
+<hr />
+
+<h4 id="更改敌人寻路算法-利用集合存储防御塔和子弹类">更改敌人寻路算法，利用集合存储防御塔和子弹类</h4>
+
+<p>​   在<code>Map</code>类中设置几个关键点坐标（每个方向改变的点），并使用数组进行存储，然后再遍历这个坐标类，利用每个元素和敌人间的方向和距离来控制敌人移动，当敌人类和关键点接近重合时更新至下一个关键坐标，以此循环来达到敌人寻路的效果，并使用线程启动，再利用上面的线程类开线程的方法完成多个敌人同时的移动。寻路算法的源码如下：</p>
+
+<pre><code class="language-java">public void move() {
+        int dx = road_1[loc].x - x;
+        int dy = road_1[loc].y - y;
+        if (Math.abs(road_1[loc].x - x) &lt; 3 &amp; Math.abs(road_1[loc].y - y) &lt; 3 &amp;&amp; loc &lt; road_1.length - 1) {
+            loc++;
+        }
+        if (Math.abs(x - road_1[road_1.length - 1].x)&lt;3 &amp;&amp; Math.abs(y - road_1[road_1.length - 1].y)&lt;3) {
+            isLive = false;
+        }
+
+        if (dx &gt; 0 &amp;&amp; Math.abs(dy) &gt;= 0 &amp;&amp; Math.abs(dy) &lt; 3) {
+            direct = RIGHT;
+            x += speed;
+        }
+        if (dx &lt; 0 &amp;&amp; Math.abs(dy) &gt;= 0 &amp;&amp; Math.abs(dy) &lt; 3) {
+            direct = LEFT;
+            x -= speed;
+        }
+        if (Math.abs(dx) &gt;= 0 &amp;&amp; Math.abs(dx) &lt; 3 &amp;&amp; dy &gt; 0) {
+            direct = DOWN;
+            y += speed;
+        }
+        if (Math.abs(dx) &gt;= 0 &amp;&amp; Math.abs(dx) &lt; 3 &amp;&amp; dy &lt; 0) {
+            direct = UP;
+            y -= speed;
+        }
+    }
+</code></pre>
+
+<p>​   优化子弹类，通过线程实现子弹追踪，并且通过集合进行存储。优化防御塔类线程，设计两种攻击模式，同时通过集合进行存储。在<code>Map</code>类中定义防御塔基座集合，在鼠标点击事件中进行判断，使用户只能在指定的坐标范围内创建防御塔，创建后移除该基座坐标。增加防御塔售卖功能，用户点击特殊区域中断防御塔线程，使防御塔<code>isLive</code>状态为<code>false</code>，并且将该坐标重新添加到基座集合中。防御塔线程如下：</p>
+
+<pre><code class="language-java">public void run() {
+        int delay = 10;
+        while(true) {
+            for(int i = 0; i &lt; list_landforce.size(); i++) {
+                Enemy_Landforce landforce = list_landforce.get(i);
+                if(landforce.isLive) {
+                    subx = landforce.getX() - this.getX();
+                    suby = landforce.getY() - this.getY();
+                    
+                    if(Math.abs(subx)&lt;128&amp;&amp;Math.abs(suby)&lt;128) {
+                        //判断敌人所处象限
+                        if( subx&gt;0 &amp;&amp; suby&gt;0 &amp;&amp; Math.abs(subx)&lt;Math.abs(suby) ) {
+                            this.setDirect(DOWN);// 第一项限
+                            try {
+                                Thread.sleep(delay);
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                        else if( subx&gt;0 &amp;&amp; suby&gt;0 &amp;&amp; Math.abs(subx)&gt;Math.abs(suby) ) {
+                            this.setDirect(RIGHT);
+                            try {
+                                Thread.sleep(delay);
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                        else if( subx&lt;0 &amp;&amp; suby&gt;0 &amp;&amp; Math.abs(subx)&lt;Math.abs(suby) ) {
+                            this.setDirect(DOWN);// 第二项限
+                            try {
+                                Thread.sleep(delay);
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                        else if( subx&lt;0 &amp;&amp; suby&gt;0 &amp;&amp; Math.abs(subx)&gt;Math.abs(suby) ) {
+                            this.setDirect(LEFT);
+                            try {
+                                Thread.sleep(delay);
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                        else if( subx&lt;0 &amp;&amp; suby&lt;0 &amp;&amp; Math.abs(subx)&lt;Math.abs(suby) ) {                  
+                            this.setDirect(UP);  // 第三项限
+                            try {
+                                Thread.sleep(delay);
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                        else if( subx&lt;0 &amp;&amp; suby&lt;0 &amp;&amp; Math.abs(subx)&gt;Math.abs(suby) ) {              
+                            this.setDirect(LEFT); 
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                        else if(subx&gt;0 &amp;&amp; suby&lt;0 &amp;&amp; Math.abs(subx)&lt;Math.abs(suby)) {
+                            this.setDirect(UP); 
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                        else if(subx&gt;0 &amp;&amp; suby&lt;0 &amp;&amp; Math.abs(subx)&gt;Math.abs(suby)){
+                            this.setDirect(RIGHT); // 第四项限
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                        
+//                      if(subx&gt;-90&amp;&amp;subx&lt;90&amp;&amp;suby&gt;-90&amp;&amp;suby&lt;90) {
+//                          //第二种防御塔，随机攻击在一定范围内的敌人，不会一直追着一个敌人打
+//                          fire(landforce);
+//                          for(int j = 0; j &lt; list_Bullet.size(); j++) {
+//                              Bullet_F1 bullet1 = list_Bullet.get(j); 
+//                              if(!bullet1.isLive) {
+//                                  list_Bullet.remove(bullet1);
+//                              }
+//                          }
+//                          try {
+//                              Thread.sleep(1000);
+//                          } catch (InterruptedException e) {
+//                              e.printStackTrace();
+//                          }
+//                      }
+                        
+                        //只要敌人活着并且没有走出防御塔范围，就一直攻击
+                        while(subx&gt;-90&amp;&amp;subx&lt;90&amp;&amp;suby&gt;-90&amp;&amp;suby&lt;90&amp;&amp;landforce.isLive) {
+                        //第一种防御塔，跟踪塔
+                            //在fire方法中创建子弹类同时开启子弹线程
+                            fire(landforce);
+                            //进行子弹回填
+                            for(int j = 0; j &lt; list_Bullet.size(); j++) {
+                                Bullet_F1 bullet1 = list_Bullet.get(j); 
+                                if(!bullet1.isLive) {
+                                    list_Bullet.remove(bullet1);
+                                }
+                            }
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            if(!isLive) {//进行三次判断，如果防御塔isLive状态为false，从内部开始中断线程
+//                              System.out.println(&quot;停止开火，跳出while循环&quot;);
+                                break;
+                            }
+                        }
+                        
+                        try {
+                            Thread.sleep(10);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                }
+                if(!isLive) {
+//                  System.out.println(&quot;停止开火，停止检测敌人&quot;);
+                    break;
+                }
+            }
+            
+            if(!isLive) {
+//              System.out.println(&quot;线程中断了&quot;);
+                break;
+            }
+        }
+    }
+</code></pre>
+
+<p>​   实现的效果如下：</p>
+
+<p><img src="https://od.lk/s/NDBfMTAyMzk1NTlf/sell%26TowerCollection.png" alt="" /></p>
+
+<p>2019-06-01</p>
 
 
                 
