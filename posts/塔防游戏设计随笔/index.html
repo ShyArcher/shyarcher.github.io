@@ -232,6 +232,7 @@
 <li><a href="#实现效果">实现效果</a></li>
 </ul></li>
 <li><a href="#更改敌人寻路算法-利用集合存储防御塔和子弹类">更改敌人寻路算法，利用集合存储防御塔和子弹类</a></li>
+<li><a href="#创建player类-根据hp-money变量在屏幕绘制玩家血条-金币数量">创建Player类，根据Hp、money变量在屏幕绘制玩家血条，金币数量</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -709,6 +710,18 @@ else
 <p><img src="https://od.lk/s/NDBfMTAyMzk1NTlf/sell%26TowerCollection.png" alt="" /></p>
 
 <p>2019-06-01</p>
+
+<hr />
+
+<h4 id="创建player类-根据hp-money变量在屏幕绘制玩家血条-金币数量">创建Player类，根据Hp、money变量在屏幕绘制玩家血条，金币数量</h4>
+
+<p>​   稍微麻烦一点的是根据Player类中的money变量在屏幕上绘制金币数量并且实时更新，可以利用对10相除取余的操作分别求出money变量的个十百千位，再根据这些位数上的int值在屏幕上特定的区域绘制出相应的数字。然后利用线程更新即可。</p>
+
+<p>​   另外，分别在创建防御塔时和售卖防御塔时加入对玩家金币数变量money判断的操作，当money值&gt;=100时，可以创建一座基础防御塔，卖出防御塔时玩家金币+50，游戏开始时玩家有100金币可以用于创建一座防御塔，玩家每消灭一个敌人金币数+50，每当有一个敌人到达右端终点玩家Hp-20，当Hp为0时Player线程结束。实现效果如下：</p>
+
+<p><img src="https://od.lk/s/NDBfMTAyNDQzNDNf/Hp%26Money.png" alt="" /></p>
+
+<p>2019-06-02</p>
 
 
                 
