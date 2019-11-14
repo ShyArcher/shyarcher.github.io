@@ -195,25 +195,38 @@
                 <header>
                     <h2>TOC</h2>
                 </header>
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-jrebel是什么">1.JRebel是什么</a></li>
+<li><a href="#2-为什么要使用jrebel">2.为什么要使用JRebel</a></li>
+<li><a href="#3-怎么使用-idea为例">3.怎么使用（idea为例）</a>
+<ul>
+<li><a href="#a-安装">a)   安装</a></li>
+<li><a href="#b-激活">b) 激活</a></li>
+<li><a href="#c-使用">c)使用</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
                 
                 
-                <ol>
-<li>jrebel是什么</li>
-</ol>
 
-<p>jrebel是一款热部署插件，它可以使Javaweb在run/debug的状态下实时检测Java文件的修改，从而在前台做出对应的反馈，而不用重启整个web服务器（如tomcat等）。</p>
+<h3 id="1-jrebel是什么">1.JRebel是什么</h3>
 
-<ol>
-<li>为什么要使用jrebel</li>
-</ol>
+<p>JRebel是一款热部署插件，它可以使Javaweb在run/debug的状态下实时检测Java文件的修改，从而在前台做出对应的反馈，而不用重启整个web服务器（如tomcat等）。</p>
+
+<h3 id="2-为什么要使用jrebel">2.为什么要使用JRebel</h3>
 
 <p>在开发一些小型项目时，服务器的重启并不会占据太多时间，因此项目的调试不会对工作效率造成影响，但是一些大型项目重启一次服务器的时间会花费大量的时间，这并不利于bug调试，因此，使用jrebel可以极大地提高我们的工作效率。</p>
 
-<ol>
-<li>怎么使用（idea为例）</li>
-</ol>
+<h3 id="3-怎么使用-idea为例">3.怎么使用（idea为例）</h3>
 
-<p>a)   安装</p>
+<h4 id="a-安装">a)   安装</h4>
 
 <p>首先，在idea中点击File-&gt;Settings-&gt;Plugins。然后搜索jRebel for IntelliJ,搜索不到就点击Browese repositiones进行搜索，然后下载安装。<img src="https://od.lk/s/NDBfMTEyMTI1MjVf/jrebel1.png" alt="" /></p>
 
@@ -225,7 +238,7 @@
 
 <p><img src="https://od.lk/s/NDBfMTEyMTI1Mjdf/jrebel3.png" alt="img" /></p>
 
-<p>​   b) 激活</p>
+<h4 id="b-激活">b) 激活</h4>
 
 <p>​       1)打开注册机下载地址<a href="https://github.com/ilanyu/ReverseProxy/releases/tag/v1.4">https://github.com/ilanyu/ReverseProxy/releases/tag/v1.4</a>，然后选择对应的版本下载，Windows用户下载windows_amd64.exe这个文件即可</p>
 
@@ -241,13 +254,13 @@
 
 <p><img src="https://od.lk/s/NDBfMTEyMTI1MzBf/jrebel6.png" alt="img" /></p>
 
-<p>​       4)在注册机窗口可以看到使用的是8888端口，在第一栏输入<a href="http://127.0.0.1:8888/ba25c59f-d308-4bfe-9402-df48d28a6861。">http://127.0.0.1:8888/ba25c59f-d308-4bfe-9402-df48d28a6861。</a> URL后跟一个随机码即可（可以通过UUID获取），第二栏的邮箱随便填，然后点击激活即可</p>
+<p>​       4)在注册机窗口可以看到使用的是8888端口，在第一栏输入<a href="http://127.0.0.1:8888/ba25c59f-d308-4bfe-9402-df48d28a6861">http://127.0.0.1:8888/ba25c59f-d308-4bfe-9402-df48d28a6861</a>  地址后跟一个随机码即可（可以通过UUID获取），第二栏的邮箱随便填，然后点击激活即可</p>
 
 <p><img src="https://od.lk/s/NDBfMTEyMTI1MzFf/jrebel7.png" alt="img" /></p>
 
 <p>5)注册机出现上面的反馈说明激活成功，然后回到idea，点击work offline使用离线模式，在180天内不用再次激活，最后，关闭注册机即可（使用在线模式的话需要在后台一直开启注册机）。<img src="https://od.lk/s/NDBfMTEyMTI1MzJf/jrebel8.png" alt="img" /></p>
 
-<p>c)使用</p>
+<h4 id="c-使用">c)使用</h4>
 
 <p>​    在idea点击View-&gt;ToolWindows-&gt;Jrebel打开jRebel控制面板，勾选对应的项目，以免热部署失效<img src="https://od.lk/s/NDBfMTEyMTI1MzNf/jrebel9.png" alt="img" /><img src="https://od.lk/s/NDBfMTEyMTI1MzRf/jrebel10.png" alt="img" /></p>
 
