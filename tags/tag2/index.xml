@@ -6,10 +6,19 @@
     <description>Recent content in tag2 on ShyArcher Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shyarcher.github.io/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>热部署插件JRebel使用说明</title>
+      <link>https://shyarcher.github.io/posts/%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6jrebel%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://shyarcher.github.io/posts/%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6jrebel%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
+      <description>jrebel是什么 jrebel是一款热部署插件，它可以使Javaweb在run/debug的状态下实时检测Java文件的修改，从而在前台做出</description>
+    </item>
     
     <item>
       <title>塔防游戏设计随笔</title>
