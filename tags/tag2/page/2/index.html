@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="热部署插件JRebel使用说明" />
-    <meta property="og:title" content="热部署插件JRebel使用说明" />
-    <meta property="twitter:title" content="热部署插件JRebel使用说明" />
+    <meta name="title" content="" />
+    <meta property="og:title" content="" />
+    <meta property="twitter:title" content="" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="java,Java后端">
     <link rel="shortcut icon" href="/img/myheader_image.jpg">
 
-    <title>热部署插件JRebel使用说明-ShyArcher&#39;s blog | ShyArcher Blog</title>
+    <title>tag2-ShyArcher&#39;s blog | ShyArcher Blog</title>
 
-    <link rel="canonical" href="/posts/%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6jrebel%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">
+    <link rel="canonical" href="/tags/tag2/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -139,39 +139,14 @@
 
 
 
-
-<style type="text/css">
-    header.intro-header {
-        background-image: url('/img/myheader_image_01.png')
-    }
-</style>
-<header class="intro-header">
+<header class="intro-header" style="background-image: url('/img/myheader_image_01.png')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        
-                        <a class="tag" href="/tags/tag1" title="tag1">
-                            tag1
-                        </a>
-                        
-                        <a class="tag" href="/tags/tag2" title="tag2">
-                            tag2
-                        </a>
-                        
-                    </div>
-                    <h1>热部署插件JRebel使用说明</h1>
-                    <h2 class="subheading"></h2>
-                    <span class="meta">
-			Posted by 
-			
-			         &#34;ShyArcher&#34;
-			 
-			on 
-			Thursday, November 14, 2019
-                        
-                    </span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>ShyArcher Blog </h1>
+                    
+		    <span class="subheading">求知若渴, 虚心若愚</span>
                 </div>
             </div>
         </div>
@@ -180,143 +155,152 @@
 
 
 
-
-<article>
-    <div class="container">
-        <div class="row">
-
+  
+<div class="container">
+    <div class="row">
+        
+        
+   	    <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container
+        ">
             
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
 
-                
-                <header>
-                    <h2>TOC</h2>
-                </header>
-                <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#jrebel是什么">jrebel是什么</a></li>
-<li><a href="#2-为什么要使用jrebel">2.为什么要使用jrebel</a></li>
-<li><a href="#3-怎么使用-idea为例">3.怎么使用（idea为例）</a>
-<ul>
-<li><a href="#a-安装">a)   安装</a></li>
-<li><a href="#b-激活">b) 激活</a></li>
-<li><a href="#c-使用">c)使用</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-                
-                
-
-<h3 id="jrebel是什么">jrebel是什么</h3>
-
-<p>jrebel是一款热部署插件，它可以使Javaweb在run/debug的状态下实时检测Java文件的修改，从而在前台做出对应的反馈，而不用重启整个web服务器（如tomcat等）。</p>
-
-<h3 id="2-为什么要使用jrebel">2.为什么要使用jrebel</h3>
-
-<p>在开发一些小型项目时，服务器的重启并不会占据太多时间，因此项目的调试不会对工作效率造成影响，但是一些大型项目重启一次服务器的时间会花费大量的时间，这并不利于bug调试，因此，使用jrebel可以极大地提高我们的工作效率。</p>
-
-<h3 id="3-怎么使用-idea为例">3.怎么使用（idea为例）</h3>
-
-<h4 id="a-安装">a)   安装</h4>
-
-<p>首先，在idea中点击File-&gt;Settings-&gt;Plugins。然后搜索jRebel for IntelliJ,搜索不到就点击Browese repositiones进行搜索，然后下载安装。<img src="https://od.lk/s/NDBfMTEyMTI1MjVf/jrebel1.png" alt="" /></p>
-
-<p>前面的方法都无效的话还可以去官网下载安装<a href="https://jrebel.com/software/jrebel/download/">https://jrebel.com/software/jrebel/download/</a>，由于jrebel是收费的，在这里可以注册申请7天的免费使用权。下载之后点击第三个选项安装外部插件即可</p>
-
-<p><img src="https://od.lk/s/NDBfMTEyMTI1MjZf/jrebel2.png" alt="img" /></p>
-
-<p>安装之后再次打开Settings就能看到Jrebel的选项了，点击该选项进行激活</p>
-
-<p><img src="https://od.lk/s/NDBfMTEyMTI1Mjdf/jrebel3.png" alt="img" /></p>
-
-<h4 id="b-激活">b) 激活</h4>
-
-<p>​       1)打开注册机下载地址<a href="https://github.com/ilanyu/ReverseProxy/releases/tag/v1.4">https://github.com/ilanyu/ReverseProxy/releases/tag/v1.4</a>，然后选择对应的版本下载，Windows用户下载windows_amd64.exe这个文件即可</p>
-
-<p><img src="https://od.lk/s/NDBfMTEyMTI1MzVf/jrebel11.png" alt="img" /></p>
-
-<p>​       2)左键双击运行注册机</p>
-
-<p><img src="https://od.lk/s/NDBfMTEyMTI1Mjhf/jrebel4.png" alt="img" /></p>
-
-<p>​       3）打开idea，点击File-&gt;Settings-&gt;jRebel，进行按钮进行激活（已激活就是Change License，未激活时为Activate License）</p>
-
-<p><img src="https://od.lk/s/NDBfMTEyMTI1Mjlf/jrebel5.png" alt="img" /></p>
-
-<p><img src="https://od.lk/s/NDBfMTEyMTI1MzBf/jrebel6.png" alt="img" /></p>
-
-<p>​       4)在注册机窗口可以看到使用的是8888端口，在第一栏输入<a href="http://127.0.0.1:8888/ba25c59f-d308-4bfe-9402-df48d28a6861。">http://127.0.0.1:8888/ba25c59f-d308-4bfe-9402-df48d28a6861。</a> URL后跟一个随机码即可（可以通过UUID获取），第二栏的邮箱随便填，然后点击激活即可</p>
-
-<p><img src="https://od.lk/s/NDBfMTEyMTI1MzFf/jrebel7.png" alt="img" /></p>
-
-<p>5)注册机出现上面的反馈说明激活成功，然后回到idea，点击work offline使用离线模式，在180天内不用再次激活，最后，关闭注册机即可（使用在线模式的话需要在后台一直开启注册机）。<img src="https://od.lk/s/NDBfMTEyMTI1MzJf/jrebel8.png" alt="img" /></p>
-
-<h4 id="c-使用">c)使用</h4>
-
-<p>​    在idea点击View-&gt;ToolWindows-&gt;Jrebel打开jRebel控制面板，勾选对应的项目，以免热部署失效<img src="https://od.lk/s/NDBfMTEyMTI1MzNf/jrebel9.png" alt="img" /><img src="https://od.lk/s/NDBfMTEyMTI1MzRf/jrebel10.png" alt="img" /></p>
-
-<p>（对JS文件的更改有时会莫名失效，手动编译+清除浏览器缓存即可解决）</p>
-
-<p>以上</p>
-
-<p>​   ——更新于2019-11-14</p>
-
-
-                
-
-                <hr>
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/posts/%E5%A1%94%E9%98%B2%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E9%9A%8F%E7%AC%94/" data-toggle="tooltip" data-placement="top" title="塔防游戏设计随笔">&larr;
-                            Previous Post</a>
-                    </li>
-                    
-                    
-                </ul>
-
-                
-<div id="disqus-comment"></div>
-
-
-
-            </div>
-            
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                
-                
-
-                
-                
-                <section>
-                    <hr>
-                    <h5>友情链接</h5>
-                    <ul class="list-inline">
-                        
-                        <li><a target="_blank" href="https://kuroha.vip">Kuroha 的博客</a></li>
-                        
-                        <li><a target="_blank" href="https://noahapps.github.io/">Noah 的博客</a></li>
-                        
-                    </ul>
-                </section>
-                
-            </div>
+<div class="post-preview">
+    <a href="https://shyarcher.github.io/posts/blog-configuration-notes/">
+        <h2 class="post-title">
+            Blog Configuration Notes
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            hugo搭建个人博客步骤及几点注意事项 搭建个人博客需要事先做的准备: 安装 git, 注册 github 账号, 安装 hugo 1.下载并安装hugo ​ 在官网下载并安装hugo
+       
         </div>
-    </div>
-</article>
+    </a>
+    <p class="post-meta">
+    Posted by      &#34;ShyArcher&#34; Monday, April 22, 2019
+    </p>
+</div>
+<hr>
+
+
+            
+
+
+<ul class="pager">
+    
+    <li class="previous">
+        <a href="/tags/tag2/">&larr; Newer Posts</a>
+    </li>
+    
+    
+</ul>
+
+
+       	</div>
+        
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+    
+
+    
+	
+    <section class="visible-md visible-lg">
+	<hr><h5><a href="/top/about">ABOUT ME</a></h5>
+        <div class="short-about">
+            
+            <a href="/top/about">
+               <img src="/img/myheader_image.jpg" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>编程爱好者,人生的探索者</p>
+            
+           
+           <ul class="list-inline"> 
+               
+               <li>
+                   <a href="https://shyarcher.github.io/tags/tag2/index.xml" rel="alternate" type="application/rss+xml" title="ShyArcher Blog" >
+                       <span class="fa-stack fa-lg">
+                           <i class="fa fa-circle fa-stack-2x"></i>
+                           <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+                    <li>
+                        <a href="mailto:ranshy@foxmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="/img/mywechat.png">
+                       <span class="fa-stack fa-lg">
+                           <i class="fa fa-circle fa-stack-2x"></i>
+                           <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/ShyArcher">
+                       <span class="fa-stack fa-lg">
+                           <i class="fa fa-circle fa-stack-2x"></i>
+                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>我的小伙伴们</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://kuroha.vip">Kuroha 的博客</a></li>
+            
+            <li><a target="_blank" href="https://noahapps.github.io/">Noah 的博客</a></li>
+            
+        </ul>
+    </section>
+    
+
+    
+    
+</div>
+
+	</div>
+</div>
+
 
 
 
@@ -328,7 +312,7 @@
                 <ul class="list-inline text-center">
                    
                    <li>
-                       <a href="" rel="alternate" type="application/rss+xml" title="ShyArcher Blog" >
+                       <a href="https://shyarcher.github.io/tags/tag2/index.xml" rel="alternate" type="application/rss+xml" title="ShyArcher Blog" >
                            <span class="fa-stack fa-lg">
                                <i class="fa fa-circle fa-stack-2x"></i>
                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
