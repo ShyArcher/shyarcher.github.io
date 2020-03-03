@@ -47,5 +47,14 @@
       <description>hugo搭建个人博客步骤及几点注意事项 搭建个人博客需要事先做的准备: 安装 git, 注册 github 账号, 安装 hugo 1.下载并安装hugo ​ 在官网下载并安装hugo</description>
     </item>
     
+    <item>
+      <title>Windows触摸板操作及谷歌浏览器快捷键整理</title>
+      <link>https://shyarcher.github.io/posts/windows%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%93%8D%E4%BD%9C%E5%8F%8A%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://shyarcher.github.io/posts/windows%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%93%8D%E4%BD%9C%E5%8F%8A%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86/</guid>
+      <description>Windows触摸板操作指南 1.选中拖动文件 ​ 单指快速点击触摸板两次后拖动，第二次点击不松开 2.原鼠标右键功能 ​ 双指轻触触摸板 3.页面上下滑</description>
+    </item>
+    
   </channel>
 </rss>
