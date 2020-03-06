@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="配置达梦驱动包至本地Maven库" />
+    <meta property="og:title" content="配置达梦驱动包至本地Maven库" />
+    <meta property="twitter:title" content="配置达梦驱动包至本地Maven库" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="java,Java后端">
     <link rel="shortcut icon" href="/img/myheader_image.jpg">
 
-    <title>tag2-ShyArcher&#39;s blog | ShyArcher Blog</title>
+    <title>配置达梦驱动包至本地Maven库-ShyArcher&#39;s blog | ShyArcher Blog</title>
 
-    <link rel="canonical" href="/tags/tag2/">
+    <link rel="canonical" href="/posts/%E9%85%8D%E7%BD%AE%E8%BE%BE%E6%A2%A6%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%87%B3%E6%9C%AC%E5%9C%B0maven%E5%BA%93/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -139,14 +139,39 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/myheader_image_01.png')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/myheader_image_01.png')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>ShyArcher Blog </h1>
-                    
-		    <span class="subheading">求知若渴, 虚心若愚</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        <a class="tag" href="/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                    </div>
+                    <h1>配置达梦驱动包至本地Maven库</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+			Posted by 
+			
+			         &#34;ShyArcher&#34;
+			 
+			on 
+			Friday, March 6, 2020
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -155,152 +180,109 @@
 
 
 
-  
-<div class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            
 
-<div class="post-preview">
-    <a href="https://shyarcher.github.io/posts/windows%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%93%8D%E4%BD%9C%E5%8F%8A%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86/">
-        <h2 class="post-title">
-            Windows触摸板操作及谷歌浏览器快捷键整理
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            Windows触摸板操作指南 1.选中拖动文件 ​ 单指快速点击触摸板两次后拖动，第二次点击不松开 2.原鼠标右键功能 ​ 双指轻触触摸板 3.页面上下滑
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by      &#34;ShyArcher&#34; Monday, January 1, 0001
-    </p>
-</div>
-<hr>
-
+<article>
+    <div class="container">
+        <div class="row">
 
             
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/tags/tag2/">&larr; Newer Posts</a>
-    </li>
-    
-    
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#应用场景">应用场景</a></li>
+<li><a href="#步骤">步骤</a></li>
+</ul></li>
+</ul></li>
 </ul>
+</nav>
+                
+                
+
+<h3 id="应用场景">应用场景</h3>
+
+<p>​   进行web开发经常需要引入jar包，当maven库中不存在，且不能使用镜像下载时便需要手动导入至本地Maven库（这里以配置达梦数据库驱动包为例）</p>
+
+<h3 id="步骤">步骤</h3>
+
+<p>1.打开达梦安装根目录，进入source-&gt;drivers-&gt;jdbc目录，复制Dm7JdbcDriver17.jar至d盘根目录</p>
+
+<p>2.win+R打开控制台，执行以下语句将达梦数据帅驱动包添加至本地maven仓库</p>
+
+<pre><code class="language-java">mvn install:install-file -Dfile=D:/Dm7JdbcDriver17.jar -DgroupId=com.dm -DartifactId=Dm7JdbcDriver -Dversion=1.7 -Dpackaging=jar
+</code></pre>
+
+<p>3.打开IDEA，在POM文件中添加达梦数据库驱动依赖</p>
+
+<pre><code class="language-java">&lt;dependency&gt;
+    &lt;groupId&gt;com.dm&lt;/groupId&gt;
+    &lt;artifactId&gt;Dm7JdbcDriver&lt;/artifactId&gt;
+    &lt;version&gt;1.7&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>4.完成后本地仓库的路径是这样的</p>
+
+<p><img src="https://od.lk/s/NDBfMTQ2MjczMjFf/maven_repository_example.png" alt="" /></p>
 
 
-       	</div>
-        
+                
 
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-    
-
-    
-	
-    <section class="visible-md visible-lg">
-	<hr><h5><a href="/top/about">ABOUT ME</a></h5>
-        <div class="short-about">
-            
-            <a href="/top/about">
-               <img src="/img/myheader_image.jpg" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>编程爱好者,人生的探索者</p>
-            
-           
-           <ul class="list-inline"> 
-               
-               <li>
-                   <a href="https://shyarcher.github.io/tags/tag2/index.xml" rel="alternate" type="application/rss+xml" title="ShyArcher Blog" >
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-                    <li>
-                        <a href="mailto:ranshy@foxmail.com">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/posts/%E7%83%AD%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6jrebel%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" data-toggle="tooltip" data-placement="top" title="热部署插件JRebel使用说明">&larr;
+                            Previous Post</a>
                     </li>
-		    
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="/img/mywechat.png">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/ShyArcher">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
+                    
+                    
                 </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
             </div>
-    </section>
-	
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>我的小伙伴们</h5>
-        <ul class="list-inline">
             
-            <li><a target="_blank" href="https://kuroha.vip">Kuroha 的博客</a></li>
-            
-            <li><a target="_blank" href="https://noahapps.github.io/">Noah 的博客</a></li>
-            
-        </ul>
-    </section>
-    
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-    
-    
-</div>
+                
+                
 
-	</div>
-</div>
-
+                
+                
+                <section>
+                    <hr>
+                    <h5>友情链接</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://kuroha.vip">Kuroha 的博客</a></li>
+                        
+                        <li><a target="_blank" href="https://noahapps.github.io/">Noah 的博客</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
 
 
 
@@ -312,7 +294,7 @@
                 <ul class="list-inline text-center">
                    
                    <li>
-                       <a href="https://shyarcher.github.io/tags/tag2/index.xml" rel="alternate" type="application/rss+xml" title="ShyArcher Blog" >
+                       <a href="" rel="alternate" type="application/rss+xml" title="ShyArcher Blog" >
                            <span class="fa-stack fa-lg">
                                <i class="fa fa-circle fa-stack-2x"></i>
                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>

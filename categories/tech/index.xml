@@ -6,10 +6,19 @@
     <description>Recent content in Tech on ShyArcher Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 14 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shyarcher.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>配置达梦驱动包至本地Maven库</title>
+      <link>https://shyarcher.github.io/posts/%E9%85%8D%E7%BD%AE%E8%BE%BE%E6%A2%A6%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%87%B3%E6%9C%AC%E5%9C%B0maven%E5%BA%93/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://shyarcher.github.io/posts/%E9%85%8D%E7%BD%AE%E8%BE%BE%E6%A2%A6%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%87%B3%E6%9C%AC%E5%9C%B0maven%E5%BA%93/</guid>
+      <description>应用场景 ​ 进行web开发经常需要引入jar包，当maven库中不存在，且不能使用镜像下载时便需要手动导入至本地Maven库（这里以配置达梦数</description>
+    </item>
     
     <item>
       <title>热部署插件JRebel使用说明</title>
