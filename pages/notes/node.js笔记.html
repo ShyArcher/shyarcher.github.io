@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Node.js学习笔记 | shyarcher </title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/icon.jpg">
+    <meta name="description" content="程序员的浪漫就是，当你放下手头的工作时，窗外夕阳正好，落叶满地，银色满际">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.1b02cb7d.js" as="script"><link rel="preload" href="/assets/js/2.9788d3fd.js" as="script"><link rel="preload" href="/assets/js/22.1a25f739.js" as="script"><link rel="prefetch" href="/assets/js/10.d36ab27c.js"><link rel="prefetch" href="/assets/js/11.5659a136.js"><link rel="prefetch" href="/assets/js/12.6d7245f0.js"><link rel="prefetch" href="/assets/js/13.d9485d1c.js"><link rel="prefetch" href="/assets/js/14.542a0ec3.js"><link rel="prefetch" href="/assets/js/15.e569712e.js"><link rel="prefetch" href="/assets/js/16.89b6987f.js"><link rel="prefetch" href="/assets/js/17.6eb0b6cf.js"><link rel="prefetch" href="/assets/js/18.ebb68d18.js"><link rel="prefetch" href="/assets/js/19.428ed358.js"><link rel="prefetch" href="/assets/js/20.4074b548.js"><link rel="prefetch" href="/assets/js/21.dfeac051.js"><link rel="prefetch" href="/assets/js/23.38a193b0.js"><link rel="prefetch" href="/assets/js/24.46fe3449.js"><link rel="prefetch" href="/assets/js/25.7759881a.js"><link rel="prefetch" href="/assets/js/26.8e05727c.js"><link rel="prefetch" href="/assets/js/27.5cbb0a47.js"><link rel="prefetch" href="/assets/js/28.f4554195.js"><link rel="prefetch" href="/assets/js/29.408e403e.js"><link rel="prefetch" href="/assets/js/3.7651c91f.js"><link rel="prefetch" href="/assets/js/30.410c0b65.js"><link rel="prefetch" href="/assets/js/31.ea942dbd.js"><link rel="prefetch" href="/assets/js/32.b785b30b.js"><link rel="prefetch" href="/assets/js/33.f6a5adef.js"><link rel="prefetch" href="/assets/js/34.4cd64d4f.js"><link rel="prefetch" href="/assets/js/35.8d895c60.js"><link rel="prefetch" href="/assets/js/4.2b93dc1f.js"><link rel="prefetch" href="/assets/js/5.f064699d.js"><link rel="prefetch" href="/assets/js/6.258c7694.js"><link rel="prefetch" href="/assets/js/7.73b19b4c.js"><link rel="prefetch" href="/assets/js/8.e81bf8c4.js"><link rel="prefetch" href="/assets/js/9.7f372900.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/icon.jpg" alt="shyarcher " class="logo"> <span class="site-name can-hide">shyarcher </span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="分类" class="mobile-dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/notes/01vue的基本概念.html" class="nav-link">
+  vue相关
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/git笔记.html" class="nav-link">
+  其他学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/nodejs后台起服务步骤.html" class="nav-link">
+  打包工具&amp;模块搭建
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/Windows触摸板操作及谷歌浏览器快捷键整理.html" class="nav-link">
+  旧版迁移内容
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/ShyArcher" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="分类" class="mobile-dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/notes/01vue的基本概念.html" class="nav-link">
+  vue相关
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/git笔记.html" class="nav-link">
+  其他学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/nodejs后台起服务步骤.html" class="nav-link">
+  打包工具&amp;模块搭建
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/Windows触摸板操作及谷歌浏览器快捷键整理.html" class="nav-link">
+  旧版迁移内容
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/ShyArcher" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/01vue的基本概念.html" class="sidebar-link">01vue的基本概念</a></li><li><a href="/pages/notes/02侦听器和axios.html" class="sidebar-link">02侦听器和axios</a></li><li><a href="/pages/notes/03vue生命周期和组件数据传递.html" class="sidebar-link">03vue生命周期和组件数据传递</a></li><li><a href="/pages/notes/04vuex笔记.html" class="sidebar-link">04vuex笔记</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JavaScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/原型和继承.html" class="sidebar-link">原型和继承</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>React相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/React学习笔记.html" class="sidebar-link">React学习笔记</a></li><li><a href="/pages/notes/Hooks笔记.html" class="sidebar-link">Hooks笔记</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>其他学习笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/git笔记.html" class="sidebar-link">git笔记</a></li><li><a href="/pages/notes/jQuery笔记.html" class="sidebar-link">jQuery笔记</a></li><li><a href="/pages/notes/node.js笔记.html" class="active sidebar-link">node.js笔记</a></li><li><a href="/pages/notes/关于服务器的一些概念.html" class="sidebar-link">关于服务器的一些概念</a></li><li><a href="/pages/notes/echarts笔记.html" class="sidebar-link">echarts笔记</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>打包工具&amp;模块搭建</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/nodejs后台起服务步骤.html" class="sidebar-link">nodejs后台起服务步骤</a></li><li><a href="/pages/notes/webpack笔记.html" class="sidebar-link">webpack笔记</a></li><li><a href="/pages/notes/yapi部署笔记.html" class="sidebar-link">yapi部署笔记</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>旧版迁移内容</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/Windows触摸板操作及谷歌浏览器快捷键整理.html" class="sidebar-link">Windows触摸板操作及谷歌浏览器快捷键整理</a></li><li><a href="/pages/notes/利用Hugo+gitHub搭建个人博客.html" class="sidebar-link">利用Hugo+gitHub搭建个人博客</a></li><li><a href="/pages/notes/利用JavaSwing开发一款桌面塔防游戏.html" class="sidebar-link">利用JavaSwing开发一款桌面塔防游戏</a></li><li><a href="/pages/notes/配置达梦驱动包至本地Maven库.html" class="sidebar-link">配置达梦驱动包至本地Maven库</a></li><li><a href="/pages/notes/热部署插件JRebel使用说明.html" class="sidebar-link">热部署插件JRebel使用说明</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="node-js学习笔记"><a href="#node-js学习笔记" class="header-anchor">#</a> Node.js学习笔记</h1> <blockquote><p>浏览器是JavaScript的前端运行环境</p> <p>nodejs是JavaScript的后端运行环境</p></blockquote> <p></p><div class="table-of-contents"><ul><li><a href="#_1-什么是node-js">1.什么是node.js</a></li><li><a href="#_2-运行命令">2.运行命令</a></li><li><a href="#_3-模块">3.模块</a><ul><li><a href="#_3-1-require函数">3.1 require函数</a></li><li><a href="#_3-2-exports对象">3.2 exports对象</a></li><li><a href="#_3-3-module对象">3.3 module对象</a></li></ul></li><li><a href="#_4-模块的路径解析规则">4.模块的路径解析规则</a></li><li><a href="#_5-包package">5.包package</a></li><li><a href="#_6-包管理工具npm">6.包管理工具NPM</a></li><li><a href="#_7-文件系统">7.文件系统</a></li><li><a href="#_8-path模块">8.path模块</a></li><li><a href="#_8-网络操作">8.网络操作</a></li></ul></div><p></p> <h2 id="_1-什么是node-js"><a href="#_1-什么是node-js" class="header-anchor">#</a> 1.什么是node.js</h2> <p>js是解释性脚本语言，需要解析器和运行环境才能运行，在客户端的解析器是浏览器中的v8解析引擎等等，服务端就是nodejs</p> <p>总结：nodejs是js的一个解析器，而运行在nodejs中的js脚本的<strong>主要作用</strong>是<strong>操作磁盘文件</strong>或者<strong>搭建http服务器</strong>，通过npm安装第三方包，可以实现更多更完善的功能</p> <p>更直观来说，nodejs是js的一个<strong>运行环境</strong>，且<strong>nodejs是</strong>基于Chrome v8引擎的<strong>JavaScript运行环境</strong></p> <h2 id="_2-运行命令"><a href="#_2-运行命令" class="header-anchor">#</a> 2.运行命令</h2> <div class="language- extra-class"><pre class="language-text"><code>node js文件名.js
+</code></pre></div><h2 id="_3-模块"><a href="#_3-模块" class="header-anchor">#</a> 3.模块</h2> <blockquote><p>大型程序一般都是模块化开发，将不同代码拆分到不同的js文件中，每个js文件就是一个模块</p></blockquote> <h3 id="_3-1-require函数"><a href="#_3-1-require函数" class="header-anchor">#</a> 3.1 require函数</h3> <p>用于在当前模块加载和使用其他模块</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//导入内置的http模块</span>
+<span class="token keyword">var</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+<span class="token comment">// 导入自定义模块</span>
+<span class="token keyword">var</span> demo <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./demo.js'</span><span class="token punctuation">)</span>
+<span class="token comment">//导入json数据</span>
+<span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./data.json'</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-2-exports对象"><a href="#_3-2-exports对象" class="header-anchor">#</a> 3.2 exports对象</h3> <blockquote><p>别的模块通过<code>require</code>函数使用当前模块时得到的就是当前模块的<code>module.exports</code>对象，exports对象和前者有相同的指向，但是对外接口以前者为准</p></blockquote> <p>当前模块的导出对象，用于导出模块公有方法和属性。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 导出方法</span>
+exports<span class="token punctuation">.</span><span class="token function-variable function">hello</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//导出属性</span>
+exports<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'小明'</span>
+</code></pre></div><h3 id="_3-3-module对象"><a href="#_3-3-module对象" class="header-anchor">#</a> 3.3 module对象</h3> <p>通过<code>module</code>对象可以访问到当前模块的一些相关信息，但最多的用途是替换当前模块的导出对象。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//将默认导出的普通对象更改为函数，导出时所有的对外接口以module.exports为准</span>
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>注意：导出的模块只会初始化一次，后面被缓存起来重复使用</strong></p> <h2 id="_4-模块的路径解析规则"><a href="#_4-模块的路径解析规则" class="header-anchor">#</a> 4.模块的路径解析规则</h2> <p>1.内置模块不做路径解析，直接返回内置模块的导出对象</p> <p>2.所有的模块都会从node_modules目录为核心进行路径解析</p> <p>3.可以配置环境变量来制定模块搜索路径</p> <h2 id="_5-包package"><a href="#_5-包package" class="header-anchor">#</a> 5.包package</h2> <p>1.多个子模块组成的大模块称为包，也可以将nodejs编写的程序称为包，所有的第三方模块也叫做包</p> <p>2.每个包都有一个入口模块main.js和配置文件package.json</p> <p>3.package.json中的重要属性</p> <p>​	main：应用程序的入口</p> <p>​	scripts：可以运行的node脚本</p> <p>​	dependcies：npm软件包生产依赖</p> <p>​	devDependencies：npm软件包开发依赖</p> <p>4.当require方法加载整个文件夹时，会先加载包中package.json配置文件指定的入口模块，没有则加载目录下的index.js模块</p> <h2 id="_6-包管理工具npm"><a href="#_6-包管理工具npm" class="header-anchor">#</a> 6.包管理工具NPM</h2> <blockquote><p>随同nodejs一起安装，可以从NPM服务器下载第三方包或命令行程序到本地</p></blockquote> <p>安装module包的npm命令</p> <div class="language- extra-class"><pre class="language-text"><code>// 全局包
+npm install 包名 -g
+nom i 包名 -g
+
+// 项目包
+// 生产环境
+npm i 包名 -S
+// 开发环境
+npm i 包名 -D
+</code></pre></div><p>安装时参考官网以判断该模块作为生产依赖包，还是开发依赖包</p> <h2 id="_7-文件系统"><a href="#_7-文件系统" class="header-anchor">#</a> 7.文件系统</h2> <blockquote><p>node内置模块包括文件系统fs、路径模块path、网络请求http；即nodejs提供的，在js代码编译运行时便已经存在的模块</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code>fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>pathname<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Deal with error.</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 处理文件中的数据</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// pathname若使用相对路径，则会将执行node指令的目录和该路径进行拼接，所以这个参数最好设置为绝对路径</span>
+</code></pre></div><h2 id="_8-path模块"><a href="#_8-path模块" class="header-anchor">#</a> 8.path模块</h2> <blockquote><p>用于操作资源路径，可以配合fs系统使用</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token comment">// 导入path模块</span>
+ <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+ 
+ <span class="token comment">// 路径拼接,可以解析'../'和'./'</span>
+ path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/a'</span><span class="token punctuation">,</span><span class="token string">'/b/c'</span><span class="token punctuation">,</span><span class="token string">'../'</span><span class="token punctuation">,</span><span class="token string">'./d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+ <span class="token comment">// 获取当前文件所在目录的绝对路径</span>
+ __dirname
+ 
+ <span class="token comment">// 获取指定资源的文件名</span>
+ path<span class="token punctuation">.</span><span class="token function">basename</span><span class="token punctuation">(</span>pathStr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//参数为文件资源路径字符串</span>
+ <span class="token comment">// 获取指定资源的文件扩展名</span>
+ path<span class="token punctuation">.</span><span class="token function">extname</span><span class="token punctuation">(</span>pathStr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//同上</span>
+</code></pre></div><h2 id="_8-网络操作"><a href="#_8-网络操作" class="header-anchor">#</a> 8.网络操作</h2> <blockquote><p>所有的网络操作都建立在http模块的基础上，首先需要使用<code>.createServer</code>方法创建一个服务器，然后调用<code>.listen</code>方法监听端口。之后，每当来了一个客户端请求，创建服务器时传入的回调函数就被调用一次。</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    response<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'text-plain'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'Hello World\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8124</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>创建web服务器的步骤：</p> <div class="language- extra-class"><pre class="language-text"><code>1.导入http模块
+2.调用http.createServer()
+3.调用server.on('request',callback(req,res){})监听客户端请求
+4.调用server.listen(端口号，callback)启动服务
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/notes/jQuery笔记.html" class="prev">
+        jQuery笔记
+      </a></span> <span class="next"><a href="/pages/notes/关于服务器的一些概念.html">
+        关于服务器的一些概念
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.1b02cb7d.js" defer></script><script src="/assets/js/2.9788d3fd.js" defer></script><script src="/assets/js/22.1a25f739.js" defer></script>
+  </body>
+</html>

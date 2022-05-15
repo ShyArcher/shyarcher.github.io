@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack重点内容 | shyarcher </title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/icon.jpg">
+    <meta name="description" content="程序员的浪漫就是，当你放下手头的工作时，窗外夕阳正好，落叶满地，银色满际">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.1b02cb7d.js" as="script"><link rel="preload" href="/assets/js/2.9788d3fd.js" as="script"><link rel="preload" href="/assets/js/24.46fe3449.js" as="script"><link rel="prefetch" href="/assets/js/10.d36ab27c.js"><link rel="prefetch" href="/assets/js/11.5659a136.js"><link rel="prefetch" href="/assets/js/12.6d7245f0.js"><link rel="prefetch" href="/assets/js/13.d9485d1c.js"><link rel="prefetch" href="/assets/js/14.542a0ec3.js"><link rel="prefetch" href="/assets/js/15.e569712e.js"><link rel="prefetch" href="/assets/js/16.89b6987f.js"><link rel="prefetch" href="/assets/js/17.6eb0b6cf.js"><link rel="prefetch" href="/assets/js/18.ebb68d18.js"><link rel="prefetch" href="/assets/js/19.428ed358.js"><link rel="prefetch" href="/assets/js/20.4074b548.js"><link rel="prefetch" href="/assets/js/21.dfeac051.js"><link rel="prefetch" href="/assets/js/22.1a25f739.js"><link rel="prefetch" href="/assets/js/23.38a193b0.js"><link rel="prefetch" href="/assets/js/25.7759881a.js"><link rel="prefetch" href="/assets/js/26.8e05727c.js"><link rel="prefetch" href="/assets/js/27.5cbb0a47.js"><link rel="prefetch" href="/assets/js/28.f4554195.js"><link rel="prefetch" href="/assets/js/29.408e403e.js"><link rel="prefetch" href="/assets/js/3.7651c91f.js"><link rel="prefetch" href="/assets/js/30.410c0b65.js"><link rel="prefetch" href="/assets/js/31.ea942dbd.js"><link rel="prefetch" href="/assets/js/32.b785b30b.js"><link rel="prefetch" href="/assets/js/33.f6a5adef.js"><link rel="prefetch" href="/assets/js/34.4cd64d4f.js"><link rel="prefetch" href="/assets/js/35.8d895c60.js"><link rel="prefetch" href="/assets/js/4.2b93dc1f.js"><link rel="prefetch" href="/assets/js/5.f064699d.js"><link rel="prefetch" href="/assets/js/6.258c7694.js"><link rel="prefetch" href="/assets/js/7.73b19b4c.js"><link rel="prefetch" href="/assets/js/8.e81bf8c4.js"><link rel="prefetch" href="/assets/js/9.7f372900.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/icon.jpg" alt="shyarcher " class="logo"> <span class="site-name can-hide">shyarcher </span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="分类" class="mobile-dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/notes/01vue的基本概念.html" class="nav-link">
+  vue相关
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/git笔记.html" class="nav-link">
+  其他学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/nodejs后台起服务步骤.html" class="nav-link">
+  打包工具&amp;模块搭建
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/Windows触摸板操作及谷歌浏览器快捷键整理.html" class="nav-link">
+  旧版迁移内容
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/ShyArcher" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="分类" class="mobile-dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/notes/01vue的基本概念.html" class="nav-link">
+  vue相关
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/git笔记.html" class="nav-link">
+  其他学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/nodejs后台起服务步骤.html" class="nav-link">
+  打包工具&amp;模块搭建
+</a></li><li class="dropdown-item"><!----> <a href="/pages/notes/Windows触摸板操作及谷歌浏览器快捷键整理.html" class="nav-link">
+  旧版迁移内容
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/ShyArcher" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/01vue的基本概念.html" class="sidebar-link">01vue的基本概念</a></li><li><a href="/pages/notes/02侦听器和axios.html" class="sidebar-link">02侦听器和axios</a></li><li><a href="/pages/notes/03vue生命周期和组件数据传递.html" class="sidebar-link">03vue生命周期和组件数据传递</a></li><li><a href="/pages/notes/04vuex笔记.html" class="sidebar-link">04vuex笔记</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JavaScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/原型和继承.html" class="sidebar-link">原型和继承</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>React相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/React学习笔记.html" class="sidebar-link">React学习笔记</a></li><li><a href="/pages/notes/Hooks笔记.html" class="sidebar-link">Hooks笔记</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他学习笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/git笔记.html" class="sidebar-link">git笔记</a></li><li><a href="/pages/notes/jQuery笔记.html" class="sidebar-link">jQuery笔记</a></li><li><a href="/pages/notes/node.js笔记.html" class="sidebar-link">node.js笔记</a></li><li><a href="/pages/notes/关于服务器的一些概念.html" class="sidebar-link">关于服务器的一些概念</a></li><li><a href="/pages/notes/echarts笔记.html" class="sidebar-link">echarts笔记</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>打包工具&amp;模块搭建</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/nodejs后台起服务步骤.html" class="sidebar-link">nodejs后台起服务步骤</a></li><li><a href="/pages/notes/webpack笔记.html" class="active sidebar-link">webpack笔记</a></li><li><a href="/pages/notes/yapi部署笔记.html" class="sidebar-link">yapi部署笔记</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>旧版迁移内容</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/notes/Windows触摸板操作及谷歌浏览器快捷键整理.html" class="sidebar-link">Windows触摸板操作及谷歌浏览器快捷键整理</a></li><li><a href="/pages/notes/利用Hugo+gitHub搭建个人博客.html" class="sidebar-link">利用Hugo+gitHub搭建个人博客</a></li><li><a href="/pages/notes/利用JavaSwing开发一款桌面塔防游戏.html" class="sidebar-link">利用JavaSwing开发一款桌面塔防游戏</a></li><li><a href="/pages/notes/配置达梦驱动包至本地Maven库.html" class="sidebar-link">配置达梦驱动包至本地Maven库</a></li><li><a href="/pages/notes/热部署插件JRebel使用说明.html" class="sidebar-link">热部署插件JRebel使用说明</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack重点内容"><a href="#webpack重点内容" class="header-anchor">#</a> webpack重点内容</h1> <p></p><div class="table-of-contents"><ul><li><a href="#_1-入口entry">1.入口entry</a></li><li><a href="#_2-出口output">2.出口output</a></li><li><a href="#_3-loader">3.loader</a></li><li><a href="#_4-插件plugin">4.插件plugin</a></li><li><a href="#_5-mode-模式">5.mode[模式]</a></li><li><a href="#_6-其他比较重要的属性">6.其他比较重要的属性</a></li></ul></div><p></p> <h3 id="_1-入口entry"><a href="#_1-入口entry" class="header-anchor">#</a> 1.入口entry</h3> <p>​		由这个模块来构建项目的内部依赖图，默认值是<code>./src/index.js</code></p> <p>​		可以直接在配置中进行配置</p> <div class="language-js extra-class"><pre class="language-js"><code>entry<span class="token operator">:</span> <span class="token string">'./src/index.js'</span><span class="token punctuation">,</span>
+</code></pre></div><h3 id="_2-出口output"><a href="#_2-出口output" class="header-anchor">#</a> 2.出口output</h3> <p>​		输出webpack创建的bundle的目标位置，默认值是./dist/main.js</p> <p>​		配置文件中需要配置的属性有</p> <div class="language-js extra-class"><pre class="language-js"><code>output<span class="token operator">:</span> <span class="token punctuation">{</span>
+        filename<span class="token operator">:</span> <span class="token string">'build.js'</span><span class="token punctuation">,</span>
+        path<span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'build'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h3 id="_3-loader"><a href="#_3-loader" class="header-anchor">#</a> 3.loader</h3> <p>​		对webpack无法直接处理的文件类型进行预处理，将其转换成commonJS模块，处理后添加至依赖图中</p> <p>​		配置文件中主要需要配置识别属性test、加载器属性use</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token operator">:</span> <span class="token punctuation">{</span>
+        rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.css$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+                use<span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token string">'style-loader'</span><span class="token punctuation">,</span>
+                    <span class="token string">&quot;css-loader&quot;</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.scss$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+                use<span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token string">'style-loader'</span><span class="token punctuation">,</span> <span class="token comment">// 在head中创建style部分，并添加入口函数中的样式</span>
+                    <span class="token string">&quot;css-loader&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 将.css文件转换成commonJS模块</span>
+                    <span class="token string">&quot;sass-loader&quot;</span> <span class="token comment">// 将.scss进行预处理，编译成.css文件</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token comment">// 注意：use中加载器的执行顺序为从下至上，从右至左</span>
+<span class="token comment">// 而且都需要先利用npm安装后，再进行使用，少数加载器有相互封装的情况则根据具体情况来使用，比如file-loader就封装在url-loader中，所以一般安装是需要都安装完毕，使用时则只需要使用url-loader即可</span>
+</code></pre></div><h3 id="_4-插件plugin"><a href="#_4-插件plugin" class="header-anchor">#</a> 4.插件plugin</h3> <p>​		一般来处理loader进行不了的任务，比如打包优化，资源管理，注入环境变量等等。更加具体的例子：比如使用HtmlWebpackPlugin插件，在每次生成bundle文件后会自动创建对应的html文件</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 通过 npm 安装</span>
+<span class="token comment">// webpack是以nodejs为基础开发的，所以webpack使用最多的就是commonJS模块，比如上面的require</span>
+
+plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span> template<span class="token operator">:</span> <span class="token string">'./src/index.html'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token comment">// 这个插件开发时一般要配合devServer来使用</span>
+</code></pre></div><h3 id="_5-mode-模式"><a href="#_5-mode-模式" class="header-anchor">#</a> 5.mode[模式]</h3> <p>​		webpack中一共有三种模式：开发模式development，生产模式production，none，生产模式会将代码进行压缩，所以开发或者学习时一般用开发模式development</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// webpack.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  mode<span class="token operator">:</span> <span class="token string">'production'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 利用脚本改变</span>
+<span class="token comment">// package.json</span>
+<span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack --mode production&quot;</span> <span class="token comment">// 发布时使用</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>以上核心内容本质上都是module.exports的属性，也叫做节点</p> <h3 id="_6-其他比较重要的属性"><a href="#_6-其他比较重要的属性" class="header-anchor">#</a> 6.其他比较重要的属性</h3> <h4 id="devserver"><a href="#devserver" class="header-anchor">#</a> devServer</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//webpack.config.js</span>
+devServer<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token keyword">static</span><span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'build'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        open<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//打包完成后自动打开浏览器</span>
+        host<span class="token operator">:</span> <span class="token string">&quot;localhost&quot;</span><span class="token punctuation">,</span><span class="token comment">//主机地址</span>
+        port<span class="token operator">:</span> <span class="token number">80</span> <span class="token comment">//端口号，若设置端口号为80，则默认隐藏</span>
+    <span class="token punctuation">}</span>
+<span class="token comment">// 以上内容不是必须的，但是devServer可以更灵活的配置serve</span>
+
+<span class="token comment">// package.json</span>
+<span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack serve&quot;</span> <span class="token comment">// 运行webpack时同时开启devServer的web-server</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>​		这个组件的作用是编译后使用内存搭建一个<code>web server</code>，实现通过访问localhost就能实时监控项目的改动，必须搭配<code>html-webpack-plugin</code>插件一起使用，且该插件初始化时必须指定template参数，但是<code>webpack-dev-server</code>会阻止打包文件在本地磁盘中的创建，而是在内存中创建对应的虚拟文件</p> <p>​	因为它的serve是在内存中操作虚拟文件，并且若<code>html-webpack-plugin</code>以默认方式创建html文件的话会直接失败</p> <h4 id="devtool"><a href="#devtool" class="header-anchor">#</a> devtool</h4> <div class="language-js extra-class"><pre class="language-js"><code>devtool<span class="token operator">:</span><span class="token string">&quot;eval-source-map&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 建议在开发中使用这个sourcemap，可以精确定位bug</span>
+	<span class="token comment">// sourceMap是一个信息文件，里边存储着位置信息，若将devtool设置为source-map，</span>
+    <span class="token comment">// 则会打包一个.map文件，里边有精确的源代码信息，所以在任何情况下都不建议将devtool设置为source-map</span>
+    
+<span class="token comment">//devtool:&quot;nosources-source-map&quot;, // 建议在生产中关闭sourcemap或者使用这个sourcemap，为了安全性，防止被追踪</span>
+</code></pre></div><p><code>devtool</code>，开发工具，主要作用是利用不同的<code>sourceMap</code>进行代码追踪，便于快速进行bug定位，但是也存在一定的安全性问题，所以要根据具体的情况选择不同的<code>sourceMap</code></p> <h4 id="resolve"><a href="#resolve" class="header-anchor">#</a> resolve</h4> <div class="language-js extra-class"><pre class="language-js"><code>resolve<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token comment">//配置模块解析</span>
+        <span class="token comment">// 创建important或者require的别名，可以将特定的文件或者目录解析成自定义名称，导入时只需导入对应的key即可</span>
+        alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 告诉webpack，程序员写的代码中，@表示src这一层目录</span>
+            <span class="token string">&quot;@&quot;</span><span class="token operator">:</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./src/'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p><code>resolve</code>可以进行模块解析的配置，而<code>alias</code>属性的主要作用是简化<code>important</code>或者<code>require</code>的路径，上面的代码利用<code>@</code>替换<code>./src</code>开发目录，可以使所有的导入都以<code>./src</code>作为路径起始点</p> <h4 id="注意"><a href="#注意" class="header-anchor">#</a> <code>注意:</code></h4> <p><strong>webpack无需loader也能够解析json文件和js文件，也就是说，在入口函数中，可以直接import对应的文件来使用，而不需要调整配置文件wepack.config.js</strong></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/notes/nodejs后台起服务步骤.html" class="prev">
+        nodejs后台起服务步骤
+      </a></span> <span class="next"><a href="/pages/notes/yapi部署笔记.html">
+        yapi部署笔记
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.1b02cb7d.js" defer></script><script src="/assets/js/2.9788d3fd.js" defer></script><script src="/assets/js/24.46fe3449.js" defer></script>
+  </body>
+</html>
